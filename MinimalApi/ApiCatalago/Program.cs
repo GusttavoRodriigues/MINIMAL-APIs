@@ -66,10 +66,46 @@ app.MapGet("/Produtos/{id:int}", async (int id, AppDbContext db) =>
 
 });
 
+app.MapPost("/Produtos",async(Produto produto,AppDbContext db) =>
+{
+    if (produto is null)
+            return Results.NoContent();
 
-//app.MapPost();
-//app.MapPut();
-//app.MapDelete();
+    db.Produtos.Add(produto);
+    await db.SaveChangesAsync();
+    return Results.Created($"/Produtos/{produto.IdProduto}", produto);
+
+});
+
+app.MapPut("/Produtos/{id:int}",async(int id,Produto produto,AppDbContext db) =>
+{
+    if (produto.IdProduto != id)
+        return Results.NotFound();
+    var _produto = await db.Produtos.FindAsync(id);
+    if(produto is null)
+        return Results.NoContent();
+    _produto.Nome = produto.Nome;
+    _produto.Descricao = produto.Descricao;
+    _produto.ImagemUrl = produto.ImagemUrl;
+    _produto.Preco = produto.Preco;
+    _produto.Estoque = produto.Estoque;
+    _produto.DataCadastro = produto.DataCadastro;
+
+    db.SaveChangesAsync();
+    return Results.Ok(produto);
+
+});
+
+app.MapDelete("/Produtos/{id:int}",async(int id, AppDbContext db) =>
+{
+    var _produto = await db.Produtos.FindAsync(id);
+    if (_produto is null)
+        return Results.NotFound();
+    db.Remove(_produto);
+    await db.SaveChangesAsync();
+    return Results.Ok(_produto);
+
+});
 
 #endregion
 

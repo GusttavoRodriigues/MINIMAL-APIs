@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gustavo\\Documents\\GitHub\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj": {}
+    "C:\\Users\\gustavo.silva\\Documents\\MINIMAL-APIs\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gustavo\\Documents\\GitHub\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj": {
+    "C:\\Users\\gustavo.silva\\Documents\\MINIMAL-APIs\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gustavo\\Documents\\GitHub\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj",
+        "projectUniqueName": "C:\\Users\\gustavo.silva\\Documents\\MINIMAL-APIs\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj",
         "projectName": "ApiCatalago",
-        "projectPath": "C:\\Users\\Gustavo\\Documents\\GitHub\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj",
-        "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gustavo\\Documents\\GitHub\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\obj\\",
+        "projectPath": "C:\\Users\\gustavo.silva\\Documents\\MINIMAL-APIs\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\ApiCatalago.csproj",
+        "packagesPath": "C:\\Users\\gustavo.silva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gustavo.silva\\Documents\\MINIMAL-APIs\\MINIMAL-APIs\\MinimalApi\\ApiCatalago\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gustavo.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +27,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,8 +45,12 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.13, )"
@@ -64,10 +68,6 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.5, )"
             }
           },
           "imports": [
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
